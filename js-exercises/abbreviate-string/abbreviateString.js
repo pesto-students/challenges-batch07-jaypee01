@@ -1,18 +1,14 @@
 /* eslint-disable linebreak-style */
-function abbreviateString(str) {
+function abbreviateString(sentence) {
   //  Checking for invalid inputs
   try {
-    if (!str && typeof str !== 'string') {
+    if (!sentence && typeof sentence !== 'string') {
       throw new Error('Invalid Parameters');
     }
-    const arrayWords = str.split(' ');
-    const arraySize = arrayWords.length;
-    //  If given input string is single word then it will return
-    //  word itself else it will return abbreviated string
-    if (arraySize === 1) {
-      return arrayWords[0];
-    }
-    return `${arrayWords[0]} ${arrayWords[arraySize - 1][0].toUpperCase()}.`;
+    const words = sentence.split(' ');
+    if (words.length === 1) {
+      return words[0];
+    } return `${words[0]} ${words[words.length - 1][0].toUpperCase()}.`;
   } catch (e) {
     throw e.message;
   }
